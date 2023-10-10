@@ -1,6 +1,45 @@
-# 커널연구회 RISC-V 실습용 입출력 보드
+# 커널연구회 RISC-V 입출력 보드 실습용 소스
 
-기능 요약:
+소스 경로 구조:
+
+|-- README.md
+|-- app
+|   |-- gpio (GPIO 실습 소스)
+|   |   |-- gpio
+|   |   |-- gpio-test
+|   |   |-- gpio-test.c
+|   |   `-- gpio.c
+|   |-- hello
+|   |   |-- hello
+|   |   `-- hello.c
+|   |-- i2c (I2C 실습 소스)
+|   |   |-- i2c
+|   |   `-- i2c.c
+|   |-- pwm (PWM 실습 소스)
+|   |   |-- pwm
+|   |   |-- pwm-test
+|   |   |-- pwm-test.c
+|   |   `-- pwm.c
+|   `-- uart (UART 실습 소스)
+|       |-- build.sh
+|       |-- recv
+|       |-- recv.c
+|       |-- send
+|       |-- send.c
+|       |-- serial.c
+|       `-- serial.h
+|-- dtb
+|   `-- overlay (DTB 추가 소스)
+|       |-- run.sh
+|       |-- vf2-overlay-i2c1.dtbo
+|       `-- vf2-overlay-uart3.dtbo
+`-- modules (드라이버 모듈)
+    |-- user-gpio-driver.ko
+    |-- user-i2c-smartmotor.ko
+    `-- user-i2c-smartpower.ko
+
+
+보드 기능 요약:
 
     • RISC-V 64비트 StarFive JH7110  40핀맵 호환
     • Serial(UART0, ttyS0) to USB 포트 탑재 (디버그 콘솔)
